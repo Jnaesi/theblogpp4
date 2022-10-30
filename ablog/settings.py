@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'theblog',
     'members',
+    'ckeditor',
 
 ]
 
