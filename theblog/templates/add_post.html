@@ -2,16 +2,24 @@
 {% block title%}Create a New Blog Post{% endblock%} 
 {% block content%} 
 
-<h1>Add post</h1>
 
-<br/><br/>
-<div class="form-group">
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-dark">Post</button>
-</div>
+{% if user.is_authenticated %}
+    <h1>Add post</h1>
 
+    <br/><br/>
+    <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark">Post</button>
+    </div>
+
+{% else %}
+
+<br/>
+You need to be logged in to add post...
+
+{% endif %}
 
 
 {% endblock %}
