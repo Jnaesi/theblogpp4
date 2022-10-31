@@ -18,12 +18,14 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    header_image = models.ImageField(null=True, blank=True, upload_to="https://res.cloudinary.com/ddj06thqn/image/upload/v1/media/images/")
     title_tag = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     #body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default='coding')
+    snippet = models.CharField(max_length=255)
     likes = models.ManyToManyField(User, related_name='blog_posts')
 
     def total_likes(self):
@@ -35,3 +37,4 @@ class Post(models.Model):
     def get_absolute_url(self):
         #return reverse('article-detail', args=(str(self.id)) )
         return reverse('home')
+

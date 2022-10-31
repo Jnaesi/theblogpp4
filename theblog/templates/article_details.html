@@ -19,6 +19,14 @@
 </small><br/>
 <hr>
 <br/>
+
+{% if post.header_image %}
+
+<img src="{{ post.header_image.url }}"style="max-height: 1024; max-width: 800px;"/>
+
+{% endif %}
+
+<br/><br/>
 {{ post.body|safe }}
 
 
