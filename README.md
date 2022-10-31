@@ -108,15 +108,23 @@ There will be an form added where you can order food that has different delivery
 
 #### Validator Testing
 * HTML
-  * No errors were returned when passing through the official W3C Validator.
+  * Document checking completed. No errors or warnings to show.
 
 * Lighthouse 
   * The lighthouse report gave a great score of 97
   
   <img src="media/images/deployment/97preform.jpg" alt="Refresh" width="500"/>
 
+* Python
+  * There was no issues with python code when i ran it in the Snyk.io app
+
+  The Snyk platform quickly finds and fixes security issues in proprietary code, open source dependencies, container images, and cloud infrastructure so businesses can build security directly into their continuous development process.
+
+  Checked all python files with 100% pass rate while testing them individually on https://www.pythonchecker.com/ aswell.
+  
+  <img src="media/images/deployment/snykiotesting.jpg" alt="Refresh" width="500"/>
 #### Notable Bugs
-No notable bugs during testing.
+Edit profile has a bug when updating it that i have not have time to fix yet.
 
 ## Credits
 

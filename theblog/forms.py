@@ -8,6 +8,7 @@ choice_list = []
 for item in choices:
     choice_list.append(item)
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -22,6 +23,7 @@ class PostForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
 
 class EditForm(forms.ModelForm):
     class Meta:

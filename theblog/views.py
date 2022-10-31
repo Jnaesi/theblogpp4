@@ -1,14 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Category, Comment 
+from .models import Post, Category, Comment
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
 # Create your views here.
 
-#def home(request):
-#    return render(request, 'home.html', {})
 
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
@@ -19,8 +17,8 @@ def LikeView(request, pk):
     else:
         post.likes.add(request.user)
         liked = True
-    
-    return HttpResponseRedirect(reverse('article-detail', args=[str(pk)]))
+        return HttpResponseRedirect(reverse('article-detail', args=[str(pk)]))
+
 
 class HomeView(ListView):
     model = Post
@@ -33,6 +31,7 @@ class HomeView(ListView):
         context["cts_menu"] = cts_menu
         return context
 
+
 def CategoryListView(request):
     cts_menu_list = Category.objects.all()
     return render(request, 'category_list.html', {'cts_menu_list':cts_menu_list})
@@ -42,6 +41,7 @@ def CategoryView(request, cts):
     category_posts = Post.objects.filter(category=cts.replace('-', ' '))
     return render(request, 'categories.html', {'cts':cts.title().replace('-', ' '), 'category_posts':category_posts})
 
+
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_details.html'
@@ -49,10 +49,8 @@ class ArticleDetailView(DetailView):
     def get_context_data(self, *args, **kwargs):
         cts_menu = Category.objects.all()
         context = super(ArticleDetailView, self).get_context_data(*args, **kwargs)
-        
         stuff = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = stuff.total_likes()
-        
         liked = False
         if stuff.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -62,31 +60,30 @@ class ArticleDetailView(DetailView):
         context["liked"] = liked
         return context
 
+
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'add_post.html'
-    #fields = '__all__'
-    #fields = ('title', 'body')
+
 
 class AddCommentView(CreateView):
-	model = Comment
-	#form_class = CommentForm
-	template_name = 'add_comment.html'
-	fields = '__all__'
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = '__all__'
+
 
 class AddCategoryView(CreateView):
     model = Category
-    #form_class = PostForm
     template_name = 'add_category.html'
     fields = '__all__'
-    #fields = ('title', 'body')
+
 
 class UpdatePostView(UpdateView):
     model = Post
     form_class = EditForm
     template_name = 'update_post.html'
-    #fields = ['title', 'title_tag', 'body']
+
 
 class DeletePostView(DeleteView):
     model = Post
