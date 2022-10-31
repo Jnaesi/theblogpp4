@@ -1,108 +1,202 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TheBlog
+## Introduction
+TheBlog is a website built in Django using Python, Bootstrap CSS and HTML. It enables users to create posts with other users from around the world. It is targetted towards users who enjoy having a discussions about different topics and would like to share their ideas with others. Users have the ability to create categories, create posts, delete posts, edit posts, and create their own profile. They can upload images for use on their posts or on their profile, link their personal social media accounts and websites, and like other users posts.
 
-Welcome Jnaesi,
+This is the fourth project for the Code Institute Diploma in Software Development.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The site provides role based permissions for users to interact with a central dataset. It includes user authentication, and Full CRUD functionality for Posts, Comments, Categories, and User Profiles.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<img src = 'media/images/deployment/Laptop1440.jpg' alt = "Homepage of the website"> </img>
 
-## Gitpod Reminders
+## Table of Contents
+## Table of Contents
+* [User Experience Design (UX)](#UX)
+    * [The Strategy Plane](#The-Strategy-Plane)
+        * [Site Goals](#Site-Goals)
+        * [User Story](#User-Story)
+    * [The Scope Plane](#The-Scope-Plane)
+    * [The Structure Plane](#The-Structure-Plane)
+    * [The Skeleton Plane](#The-Skeleton-Plane)
+        * [Wireframes](#Wireframe-mockups)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UX
+### The Strategy Plane
+*  TheBlog is intended to be a friendly community site for users to create and share their thoughts and discussions with others. Users will also be able to find posts created by other users from around the world. 
+##### The Sites Ideal User
+* Anyone looking to share their thoughts on different subjects with others
+* Someone looking to expand their knowledge
+* Someone looking for inspiration for new things to try
+* Someone looking build their social media following
 
-`python3 -m http.server`
+#### Site Goals
 
-A blue button should appear to click: _Make Public_,
+* To provide users with a place to find new discussions
+* To provide users with a place to share their own discussions
 
-Another blue button should appear to click: _Open Browser_.
+#### User Story
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+10 US were created which were then further developed into 18 User Stories. The details on each User story, [here](https://github.com/users/Jnaesi/projects/1/views/1)
 
-A blue button should appear to click: _Make Public_,
+1. Initial Django setup 
+2. Setup project databases and deployment
+3. Add blog posts to the django webpage
+4. Style the blog with Bootstrap
+5. Update and Edit blog posts
+6. Add Delete a blog post function
+7. Order blog posts by date
+8. Blog categories pages
+9. site owner objectives 
+10. Create User logins/registration with authentications
+etc.
 
-Another blue button should appear to click: _Open Browser_.
+#### Site Goals
+* To provide users with a fun and simple layout 
+* To ensure the site is fully accessible on desktop and touch enabled devices
+* To ensure the site is fully compliant with keyboard commands and screen readers
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### The Scope Plane
 
-To log into the Heroku toolbelt CLI:
+**Features planned:**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* User Profile - Create, Read, Update and Delete
+* Posts - Users can create, read, update and delete their own Posts
+* Other Users Posts - Users can read, like, and comment
+* Profiles - Users can read other users profiles
+* Users can login to their account, change their password or their names.
+* Users can reset their password if they forget it
+* Users can logout of their account
+* Users need to be registered and logged in to add a post and like functionality.
+* Responsive Design - the site needs to be fully responsive to cover the wide variety of devices users may use to access the site
+#### The Skeleton Plane
+I used Adobe Photoshop to produce wireframes of how the site would look across different devices.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<img src="media/images/deployment/wireframe_mockup.jpg" alt="drawing" width="800" height="600"/>
 
-------
 
-## Release History
+# Features
+* Common Features
+The site is designed with a central layout that the HTML inserts the relevant CSS into.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Future Features
+There will be an form added where you can order food that has different delivery options.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Main Page
+<img src = 'media/images/deployment/Laptop1440.jpg' alt = "Homepage of the website" width=400> </img>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### Add Category Page
+<img src = 'media/images/deployment/AddCategoryPage.jpg' alt = "Second part" width=400> </img>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### Add Post Page
+<img src = 'media/images/deployment/AddPostPage.jpg' alt = "form" width=400> </img>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Comment Page
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<img src = 'media/images/deployment/CommentPage.jpg' alt = "form2" width=400> </img>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Edit Profile Page
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<img src = 'media/images/deployment/EditProfilePage.jpg' alt = "form2" width=400> </img>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### Update Post Page
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<img src = 'media/images/deployment/UpdatePostPage.jpg' alt = "form2" width=400> </img>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Validator Testing
+* HTML
+  * No errors were returned when passing through the official W3C Validator.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Lighthouse 
+  * The lighthouse report gave a great score of 92, 100, 100, 92. 
+  
+  <img src="assets/images/Lighthouse.jpg" alt="Refresh" width="500" height="200"/>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Notable Bugs
+No notable bugs during testing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Credits
 
-------
+1. codeinsitute.com
+2. stackoverflow.com
+3. w3schools.com
+4. getbootstrap.com
+### Wireframe
+* MockFlow - https://www.mockflow.com
 
-## FAQ about the uptime script
+#### Technologies Used
 
-**Why have you added this script?**
+* Python
+    * The following python modules were used on this project:
+      * asgiref==3.5.2
+      * cloudinary==1.30.0
+      * dj-database-url==0.5.0
+      * dj3-cloudinary-storage==0.0.6
+      * Django==3.2.16
+      * gunicorn==20.1.0
+      * psycopg2==2.9.5
+      * pytz==2022.5
+      * sqlparse==0.4.3
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+#### Resources Used
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* The Django documentation was used extensively during development of this project
+* The Cloudinary documentation was used extensively during development to setup the configuration between django and the cloudinary apis
+* The Code Institute reference material was used as a general reference for things that I had previously done during the course.
+* All other resources used are referenced where appropriate.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Deployment
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The site was deployed via Heroku, and the live link can be found here - [TheBLOG](https://theblogpp4.herokuapp.com/)
 
-**So….?**
+### Project Deployment
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+To deploy the project through Heroku I followed these steps:
+* Sign up / Log in to [Heroku](https://www.heroku.com/)
+* From the main Heroku Dashboard page select 'New' and then 'Create New App'
+* Give the project a name - I entered theblogpp4 and select a suitable region, then select create app. The name for the app must be unique.
+* This will create the app within Heroku and bring you to the deploy tab. From the submenu at the top, navigate to the resources tab.
+* Add the database to the app, in the add-ons section search for 'Heroku Postgres', select the package that appears and add 'Heroku Postgres' as the database
+* Navigate to the setting tab, within the config vars section copy the DATABASE_URL to the clipboard for use in the Django configuration.
+* Within the django app repository create a new file called env.py - within this file import the os library and set the environment variable for the DATABASE_URL pasting in the address copied from Heroku. The line should appear as os.environ["DATABASE_URL"]= "Paste the link in here"
+* Add a secret key to the app using os.environ["SECRET_KEY"] = "your secret key goes here"
+* Add the secret key just created to the Heroku Config Vars as SECRET_KEY for the KEY value and the secret key value you created as the VALUE
+* In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url
+* insert the line if os.path.isfile("env.py"): import env
+* remove the insecure secret key that django has in the settings file by default and replace it with SECRET_KEY = os.environ.get('SECRET_KEY')
+* replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+* In the terminal migrate the models over to the new database connection
+* Navigate in a browser to cloudinary, log in, or create an account and log in. 
+* From the dashboard - copy the CLOUDINARY_URL to the clipboard
+* in the env.py file created earlier - add os.environ["CLOUDINARY_URL"] = "paste in the Url copied to the clipboard here"
+* In Heroku, add the CLOUDINARY_URL and value copied to the clipboard to the config vars
+* Also add the KEY - DISABLE_COLLECTSTATIC with the Value - 1 to the config vars
+* this key value pair must be removed prior to final deployment
+* Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
+* in the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+* Link the file to the templates directory in Heroku TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+* Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]
+* Add Heroku to the ALLOWED_HOSTS list the format will be the app name given in Heroku when creating the app followed by .herokuapp.com
+* In your code editor, create three new top level folders, media, static, templates
+* Create a new file on the top level directory - Procfile
+* Within the Procfile add the code - web: guincorn PROJECT_NAME.wsgi
+* In the terminal, add the changed files, commit and push to GitHub
+* In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
+* Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
 
-**Can I opt out?**
+## Github Deployment
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* The site was deployed to GitHub pages. The steps to deploy are as follows:
+  * In the GitHub repository, navigate to the settings tab
+  * Select the pages link from the setting menu on the left hand side 
+  * Under the GitHub Pages from the source section drop-down menu, select the master branch 
+  * One the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Acknowledgements
+I'd like to thank the students and community on slack that helped me through Javascript and the incredible learning materials on code institute.
