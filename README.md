@@ -136,11 +136,13 @@ No notable bugs during testing.
       * dj-database-url==0.5.0
       * dj3-cloudinary-storage==0.0.6
       * Django==3.2.16
+      * django-ckeditor==6.5.1
+      * django-js-asset==2.0.0
       * gunicorn==20.1.0
+      * Pillow==9.3.0
       * psycopg2==2.9.5
       * pytz==2022.5
       * sqlparse==0.4.3
-
 
 #### Resources Used
 
