@@ -30,14 +30,8 @@
 <br/><br/>
 {{ post.body|safe }}
 
-
-<br/><br/>
 <hr>
-<a href="{% url 'home' %}" class="btn btn-dark">Back</a>
 
-<br/><br/>
-<hr>
-<br/>
 <form action="{% url 'like_post' post.pk %}" method="POST">
     {% csrf_token %}
 
@@ -53,8 +47,9 @@
     {% endif %}
         - {{ total_likes }} Likes
 </form>
+<br/><br/>
 
-<br/>
+<br/><br/>
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-md-2">
@@ -73,8 +68,10 @@
 
 <p class="small text-muted">
 	
+  <a href="{% url 'show_profile_page' post.author.profile.id %}">Profile Page</a>
+
 	{% if post.author.profile.website_url %}
-		 <a href="{{ post.author.profile.website_url }}">  Website</a>  
+		| <a href="{{ post.author.profile.website_url }}">  Website</a>  
 	{% endif %}
 
 	
@@ -111,6 +108,29 @@
 
 <br/>
 
-<br/><br/><br/><br/>
+<h1>Comments...</h1>
+<br/>
+{% if not post.comments.all %}
+	No Comments Yet...<a href="{% url 'add_comment' post.pk %}">Add One</a>
+{% else %}
+
+<a href="{% url 'add_comment' post.pk %}">Add Comment</a>
+<br/><br/>
+
+	{% for comment in post.comments.all %}
+		<strong>
+			{{ comment.name }} - 
+			{{ comment.date_added }}
+		</strong>
+		<br/>
+		{{ comment.body }}
+		<br/><br/>
+
+	{% endfor %}
+
+{% endif %}
+<br/>
+
+<br/><br/>
 
 {% endblock %}
