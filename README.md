@@ -15,7 +15,6 @@ The site provides role based permissions for users to interact with a central da
         * [Site Goals](#Site-Goals)
         * [User Story](#User-Story)
     * [The Scope Plane](#The-Scope-Plane)
-    * [The Structure Plane](#The-Structure-Plane)
     * [The Skeleton Plane](#The-Skeleton-Plane)
         * [Wireframes](#Wireframe-mockups)
 * [Features](#features)
@@ -112,9 +111,9 @@ There will be an form added where you can order food that has different delivery
   * No errors were returned when passing through the official W3C Validator.
 
 * Lighthouse 
-  * The lighthouse report gave a great score of 92, 100, 100, 92. 
+  * The lighthouse report gave a great score of 97
   
-  <img src="assets/images/Lighthouse.jpg" alt="Refresh" width="500" height="200"/>
+  <img src="media/images/deployment/97preform.jpg" alt="Refresh" width="500"/>
 
 #### Notable Bugs
 No notable bugs during testing.
