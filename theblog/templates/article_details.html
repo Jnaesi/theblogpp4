@@ -33,21 +33,22 @@
 <hr>
 
 <br/>
-<form action="{% url 'like_post' post.pk %}" method="POST">
-    {% csrf_token %}
+      <form action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
 
-    {% if user.is_authenticated %}
-        {% if liked %}
-        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
-        {% else %}
-        <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Dislike</button> 
-        {% endif %}
-    
-    {% else %}
-       <button type="button" class="btn btn-light btn-sm"><a class="nav-link" href="{% url 'login' %}", >Login to like</a></button>
-    {% endif %}
-        - {{ total_likes }} Likes
-</form>
+      {% if user.is_authenticated %}
+              {% if liked %}
+                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> 
+              {% else %}	
+                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button> 
+
+              {% endif %}
+      {% else %}
+                <small><a href="{% url 'login' %}">Login</a> to like</small>
+      {% endif %}
+
+               - {{ total_likes }} Likes
+      </form>
 <br/><br/>
 
 <br/><br/>
